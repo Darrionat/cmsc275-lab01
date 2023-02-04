@@ -114,8 +114,7 @@ def drunkTest(walkLengths, numTrials, dClass):
 
 class ColdDrunk(Drunk):
     def takeStep(self):
-        stepChoices = [(0.0, 1.0), (0.0, -2.0), (1.0, 0.0), \
-                       (-1.0, 0.0)]
+        stepChoices = [(0.0, 1.0), (0.0, -2.0), (1.0, 0.0), (-1.0, 0.0)]
         return random.choice(stepChoices)
 
 
@@ -275,8 +274,10 @@ def traceWalk2(drunkKinds, numSteps):
     pylab.ylabel('Steps North/South of Origin')
     pylab.legend(loc='best')
 
-# Run a random walk with 100 trials
-# drunkTest((10,100,1000,10000), 100, UsualDrunk)
 
-# Run all the tests
-# simAll((UsualDrunk,ColdDrunk, EWDrunk), (100,1000), 10)
+if __name__ == '__main__':
+    # Run a random walk with 100 trials
+    # drunkTest((10, 100, 1000, 10000), 100, UsualDrunk)
+    # Run all the tests
+    simAll1((UsualDrunk, ColdDrunk, EWDrunk), (100, 1000), 100)
+    pylab.show()
